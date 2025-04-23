@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Chatbot Popup</title>
+    <style>
+        /* Positioning the chatbot button */
+        #chatbotButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Chatbot container (Hidden by default) */
+        #chatbotContainer {
+            position: fixed;
+            bottom: 80px; /* Above the button */
+            right: 20px;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* Initially hidden */
+        }
+
+        /* Close button for chatbot */
+        #closeChatbot {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Chatbot Button -->
+    <button id="chatbotButton">💬 Drop us a Line</button>
+
+    <!-- Chatbot Popup -->
+    <div id="chatbotContainer">
+        <button id="closeChatbot">✖</button>
+<iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/1e3daead-4092-418a-98da-5310edda62bb"></iframe>
+    </div>
+
+    <script>
+        // Toggle chatbot visibility
+        document.getElementById("chatbotButton").addEventListener("click", function() {
+            let chatbot = document.getElementById("chatbotContainer");
+            chatbot.style.display = chatbot.style.display === "none" ? "block" : "none";
+        });
+
+        // Close chatbot when clicking close button
+        document.getElementById("closeChatbot").addEventListener("click", function() {
+            document.getElementById("chatbotContainer").style.display = "none";
+        });
+    </script>
+	<div class="container">
+    <header>
+        <nav>
+            <a href="#home">HOME</a> |
+            <a href="#menu">MENU</a> |
+            <a href="#location">LOCATION</a> |
+            <a href="#aboutus">ABOUT US</a> |
+            <a href="#contactus">CONTACT US</a>
+        </nav>
+    </header>
+
+    <section id="home">
+		<img src="banner.jpg" >
+        <!-- Add images here -->
+    </section>
+
+    <section id="menu">
+        <h2>Our Menu</h2>
+        <div class="grid-container">
+        <img src="menu1.jpg" alt="Menu item 1">
+        <img src="menu2.jpg" alt="Menu item 2">
+        <img src="menu3.jpg" alt="Menu item 3">
+    </div>
+    </section>
+
+    <section id="location">
+        <h2>Location</h2>
+        <p>38 Patli Gali, Mumbai</p>
+        <!-- Add map widget here -->
+    </section>
+
+    <section id="contactus">
+        <h2>Contact Us</h2>
+        <p>Got questions? Want to place an order? Call us at +91791234567 or email us at info@atliqfastfood.com</p>
+    </section>
+
+</body>
+</html>
